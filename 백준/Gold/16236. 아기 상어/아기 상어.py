@@ -45,6 +45,7 @@ def bfs(si, sj):
                 if 0 <= ni < N and 0 <= nj < N:
                     if 0 < lst[ni][nj] < shark:
                         canEat.append((ni, nj))
+                        canEat.append((ni, nj))
 
                     elif (lst[ni][nj] == 0 or lst[ni][nj] == shark) and not visited[ni][nj]:
                         visited[ni][nj] = 1
