@@ -4,17 +4,17 @@ input = sys.stdin.readline
 N, M = map(int, input().split())
 lst = [int(input()) for _ in range(N)]
 lst.sort()
-ans = -1
+ans = int(2e9)
 
-for i in range(N - 1):
-    for j in range(i + 1, N):
-        dif = lst[j] - lst[i]
-        if dif >= M:
-            if ans == -1:
-                ans = dif
-            else:
-                ans = min(dif, ans)
-            break
+l, r = 0, 0
+
+while l <= r and r < N:
+    dif = lst[r] - lst[l]
+    if dif < M:
+        r += 1
+    else:
+        ans = min(ans, dif)
+        l += 1
     
     if ans == M:
         break
