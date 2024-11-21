@@ -16,11 +16,11 @@ for i in range(N + 1):
 def dfs(s):
     visited = [0 for _ in range(N + 1)]
     visited[s] = 1
-    stack = []
+    stack = [s]
     ans = [s]
     now = s
 
-    while True:
+    while stack:
         for next in lst[now]:
             if not visited[next]:
                 stack.append(now)
